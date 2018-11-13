@@ -1,0 +1,9 @@
+spring: 
+  cloud: 
+    config: 
+      name: microservicecloud-config-eureka-client
+      profile: test
+      label: master
+      uri: http://springcloudcfg.edu:3344
+
+      

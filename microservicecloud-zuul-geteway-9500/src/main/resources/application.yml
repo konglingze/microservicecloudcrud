@@ -1,0 +1,30 @@
+server:
+  port: 9500
+  
+  
+spring:
+  application:
+    name: microservicecloud-zuul-geteway-9500
+
+           
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.edu:7001/eureka/,http://eureka7002.edu:7002/eureka/,http://eureka7003.edu:7003/eureka/
+  instance:
+    instance-id: microservicecloud-zuul-geteway-9500
+    prefer-ip-address: false
+    
+zuul:
+  prefix: /konglingze
+  ignored-services: microservicecloud-dept
+  #ignored-services: *
+  routes:
+    mydept.serviceId: microservicecloud-dept    
+    mydept.path: /**     
+    
+info:
+  app.name: nuc-microservicecloud
+  company.name: www.nuc.edu
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
